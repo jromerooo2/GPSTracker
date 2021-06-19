@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.gMapControl1 = new GMap.NET.WindowsForms.GMapControl();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLat = new System.Windows.Forms.TextBox();
+            this.txtLong = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -40,7 +45,8 @@
             this.gMapControl1.GrayScaleMode = false;
             this.gMapControl1.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.gMapControl1.LevelsKeepInMemmory = 5;
-            this.gMapControl1.Location = new System.Drawing.Point(24, 44);
+            this.gMapControl1.Location = new System.Drawing.Point(28, 54);
+            this.gMapControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gMapControl1.MarkersEnabled = true;
             this.gMapControl1.MaxZoom = 2;
             this.gMapControl1.MinZoom = 2;
@@ -54,26 +60,85 @@
             this.gMapControl1.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.gMapControl1.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.gMapControl1.ShowTileGridLines = false;
-            this.gMapControl1.Size = new System.Drawing.Size(592, 561);
+            this.gMapControl1.Size = new System.Drawing.Size(709, 666);
             this.gMapControl1.TabIndex = 0;
             this.gMapControl1.Zoom = 0D;
+            this.gMapControl1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.gMapControl1_MouseDoubleClick);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(858, 275);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(136, 35);
+            this.btnSearch.TabIndex = 1;
+            this.btnSearch.Text = "Buscar Coordenada";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(832, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Latitud";
+            // 
+            // txtLat
+            // 
+            this.txtLat.Location = new System.Drawing.Point(835, 145);
+            this.txtLat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLat.Name = "txtLat";
+            this.txtLat.Size = new System.Drawing.Size(181, 24);
+            this.txtLat.TabIndex = 3;
+            // 
+            // txtLong
+            // 
+            this.txtLong.Location = new System.Drawing.Point(835, 214);
+            this.txtLong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtLong.Name = "txtLong";
+            this.txtLong.Size = new System.Drawing.Size(181, 24);
+            this.txtLong.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(832, 190);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 19);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Longitud";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 643);
+            this.ClientSize = new System.Drawing.Size(1087, 763);
+            this.Controls.Add(this.txtLong);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtLat);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.gMapControl1);
+            this.Font = new System.Drawing.Font("Century Gothic", 8.2F);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "GPS Bus Tracker";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private GMap.NET.WindowsForms.GMapControl gMapControl1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtLat;
+        private System.Windows.Forms.TextBox txtLong;
+        private System.Windows.Forms.Label label2;
     }
 }
 

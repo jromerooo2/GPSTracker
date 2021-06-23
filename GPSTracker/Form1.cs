@@ -26,15 +26,16 @@ namespace GPSTracker
         GMapOverlay overlay;
         static double LatInicial = 13.69;
         static double LongInicial = -89.19;
+        DataTable dt = new DataTable();
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            
             dt.Columns.Add(new DataColumn("Descripcion", typeof(string)));
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
             dt.Columns.Add(new DataColumn("Long", typeof(double)));
 
-            dt.Rows.Add("1", LatInicial, LongInicial);
+            dt.Rows.Add("jeje" , LatInicial, LongInicial);
             data.DataSource = dt;
 
             //Initial Settings
@@ -76,12 +77,6 @@ namespace GPSTracker
 
         }
 
-        private void newRoute()
-        {
-
-
-        }
-
         private void newPoint(double lat, double longi)
         {
 
@@ -113,9 +108,36 @@ namespace GPSTracker
             newRoute();
         }
 
+        private void newRoute()
+        {
+            GMapOverlay Ruta = new GMapOverlay("Rutas")
+;
+            List<PointLatLng> puntos = new List<PointLatLng>();
+
+            double lng, lat;
+
+            for (int i = 0; i < data.Rows.Count ; i++)
+            {
+                lat = Convert.ToDouble(data.Rows[i].Cells[1].Value);
+                lng = Convert.ToDouble(data.Rows[i].Cells[2].Value);
+
+                puntos.Add(new PointLatLng(lat, lng));
+
+            }
+
+            GMapRoute puntosRuta = new GMapRoute(puntos, "ruta");
+            Ruta.Routes.Add(puntosRuta);
+            gMapControl1.Overlays.Add(Ruta);
+
+            gMapControl1.Zoom = gMapControl1.Zoom + 1;
+            gMapControl1.Zoom = gMapControl1.Zoom - 1;
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-
+            double lat = Convert.ToDouble(txtLat.Text);
+            double lng = Convert.ToDouble(txtLong.Text);
+            dt.Rows.Add("Mi ubicacion" , lat, lng);
         }
     }
 }

@@ -15,7 +15,6 @@ namespace MethodsGMaps
     public class Class1
     {
 
-        GMarkerGoogle marker;
         GMapOverlay overlay;
 
         //Lat

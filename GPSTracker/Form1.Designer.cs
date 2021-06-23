@@ -34,6 +34,10 @@
             this.txtLat = new System.Windows.Forms.TextBox();
             this.txtLong = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnRoute = new System.Windows.Forms.Button();
+            this.data = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.data)).BeginInit();
             this.SuspendLayout();
             // 
             // gMapControl1
@@ -110,11 +114,45 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Longitud";
             // 
+            // btnRoute
+            // 
+            this.btnRoute.Location = new System.Drawing.Point(858, 628);
+            this.btnRoute.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnRoute.Name = "btnRoute";
+            this.btnRoute.Size = new System.Drawing.Size(136, 35);
+            this.btnRoute.TabIndex = 6;
+            this.btnRoute.Text = "Generar Ruta ";
+            this.btnRoute.UseVisualStyleBackColor = true;
+            this.btnRoute.Click += new System.EventHandler(this.btnRoute_Click);
+            // 
+            // data
+            // 
+            this.data.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.data.Location = new System.Drawing.Point(766, 425);
+            this.data.Name = "data";
+            this.data.RowTemplate.Height = 24;
+            this.data.Size = new System.Drawing.Size(309, 180);
+            this.data.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(858, 383);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 35);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Agregar Punto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1087, 763);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.data);
+            this.Controls.Add(this.btnRoute);
             this.Controls.Add(this.txtLong);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtLat);
@@ -126,6 +164,7 @@
             this.Name = "Form1";
             this.Text = "GPS Bus Tracker";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.data)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,6 +178,9 @@
         private System.Windows.Forms.TextBox txtLat;
         private System.Windows.Forms.TextBox txtLong;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnRoute;
+        private System.Windows.Forms.DataGridView data;
+        private System.Windows.Forms.Button button1;
     }
 }
 

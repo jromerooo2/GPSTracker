@@ -35,14 +35,14 @@ namespace GPSTracker
             dt.Columns.Add(new DataColumn("Lat", typeof(double)));
             dt.Columns.Add(new DataColumn("Long", typeof(double)));
 
-            dt.Rows.Add("jeje" , LatInicial, LongInicial);
+            //dt.Rows.Add("jeje" , LatInicial, LongInicial);
             data.DataSource = dt;
 
             //Initial Settings
             gMapControl1.DragButton = MouseButtons.Left;
             gMapControl1.CanDragMap = true;
             gMapControl1.MapProvider = GMapProviders.GoogleMap;
-            gMapControl1.Position = new PointLatLng(13.69, -89.19);
+            //gMapControl1.Position = new PointLatLng(13.69, -89.19);
             gMapControl1.MinZoom = 0;
             gMapControl1.MaxZoom = 24;
             gMapControl1.AutoScroll = true;
